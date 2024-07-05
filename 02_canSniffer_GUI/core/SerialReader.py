@@ -22,8 +22,8 @@ class SerialReaderThread(QThread):
             # will only contain one package at a time, so I split that buffer by end line characters.
             i = self.buf.find(b"\n")
             if i >= 0:
-                r = self.buf[:i + 1]
-                self.buf = self.buf[i + 1:]
+                r = self.buf[: i + 1]
+                self.buf = self.buf[i + 1 :]
                 # print(r.decode("utf-8"))
                 try:
                     decodedData = r.decode("utf-8")
@@ -36,9 +36,9 @@ class SerialReaderThread(QThread):
             except serial.SerialException as e:
                 print(e)
                 pass
-                # There is no new data from serial port
+                # There is no new value from serial port
             except TypeError as e:
-                # Disconnect of USB->UART occured
+                # Disconnect of USB->UART occurred
                 print("Serial disconnected")
                 print(e)
                 self.port.close()

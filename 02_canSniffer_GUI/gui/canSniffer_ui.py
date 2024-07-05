@@ -14,19 +14,25 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.setWindowModality(QtCore.Qt.NonModal)
+        # MainWindow.setWindowModality(QtCore.Qt.NonModal)
         MainWindow.setEnabled(True)
         MainWindow.resize(1202, 788)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.centralwidget.sizePolicy().hasHeightForWidth()
+        )
         self.centralwidget.setSizePolicy(sizePolicy)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.centralwidget)
@@ -36,7 +42,9 @@ class Ui_MainWindow(object):
         self.upperHoriz = QtWidgets.QHBoxLayout()
         self.upperHoriz.setObjectName("upperHoriz")
         self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.groupBox.sizePolicy().hasHeightForWidth())
@@ -50,10 +58,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setContentsMargins(-1, 1, -1, 1)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.portScanButton = QtWidgets.QPushButton(self.groupBox)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.portScanButton.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.portScanButton.sizePolicy().hasHeightForWidth()
+        )
         self.portScanButton.setSizePolicy(sizePolicy)
         self.portScanButton.setMinimumSize(QtCore.QSize(0, 20))
         font = QtGui.QFont()
@@ -62,10 +74,14 @@ class Ui_MainWindow(object):
         self.portScanButton.setObjectName("portScanButton")
         self.horizontalLayout_3.addWidget(self.portScanButton)
         self.portSelectorComboBox = QtWidgets.QComboBox(self.groupBox)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.portSelectorComboBox.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.portSelectorComboBox.sizePolicy().hasHeightForWidth()
+        )
         self.portSelectorComboBox.setSizePolicy(sizePolicy)
         self.portSelectorComboBox.setMinimumSize(QtCore.QSize(0, 20))
         font = QtGui.QFont()
@@ -74,10 +90,14 @@ class Ui_MainWindow(object):
         self.portSelectorComboBox.setObjectName("portSelectorComboBox")
         self.horizontalLayout_3.addWidget(self.portSelectorComboBox)
         self.portConnectButton = QtWidgets.QPushButton(self.groupBox)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.portConnectButton.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.portConnectButton.sizePolicy().hasHeightForWidth()
+        )
         self.portConnectButton.setSizePolicy(sizePolicy)
         self.portConnectButton.setMinimumSize(QtCore.QSize(0, 20))
         font = QtGui.QFont()
@@ -87,10 +107,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.addWidget(self.portConnectButton)
         self.portDisconnectButton = QtWidgets.QPushButton(self.groupBox)
         self.portDisconnectButton.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.portDisconnectButton.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.portDisconnectButton.sizePolicy().hasHeightForWidth()
+        )
         self.portDisconnectButton.setSizePolicy(sizePolicy)
         self.portDisconnectButton.setMinimumSize(QtCore.QSize(0, 20))
         font = QtGui.QFont()
@@ -118,10 +142,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.addWidget(self.label_3)
         self.activeChannelComboBox = QtWidgets.QComboBox(self.groupBox_5)
         self.activeChannelComboBox.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.activeChannelComboBox.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.activeChannelComboBox.sizePolicy().hasHeightForWidth()
+        )
         self.activeChannelComboBox.setSizePolicy(sizePolicy)
         self.activeChannelComboBox.setMinimumSize(QtCore.QSize(0, 0))
         font = QtGui.QFont()
@@ -137,7 +165,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.label = QtWidgets.QLabel(self.groupBox_5)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
@@ -149,10 +179,14 @@ class Ui_MainWindow(object):
         self.label.setObjectName("label")
         self.horizontalLayout_2.addWidget(self.label)
         self.playbackDelaySpinBox = QtWidgets.QSpinBox(self.groupBox_5)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.playbackDelaySpinBox.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.playbackDelaySpinBox.sizePolicy().hasHeightForWidth()
+        )
         self.playbackDelaySpinBox.setSizePolicy(sizePolicy)
         self.playbackDelaySpinBox.setMinimumSize(QtCore.QSize(20, 20))
         font = QtGui.QFont()
@@ -164,10 +198,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addWidget(self.playbackDelaySpinBox)
         self.horizontalLayout_6.addLayout(self.horizontalLayout_2)
         self.autoclearCheckBox = QtWidgets.QCheckBox(self.groupBox_5)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.autoclearCheckBox.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.autoclearCheckBox.sizePolicy().hasHeightForWidth()
+        )
         self.autoclearCheckBox.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(11)
@@ -177,10 +215,14 @@ class Ui_MainWindow(object):
         self.autoclearCheckBox.setObjectName("autoclearCheckBox")
         self.horizontalLayout_6.addWidget(self.autoclearCheckBox)
         self.showSendingTableCheckBox = QtWidgets.QCheckBox(self.groupBox_5)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.showSendingTableCheckBox.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.showSendingTableCheckBox.sizePolicy().hasHeightForWidth()
+        )
         self.showSendingTableCheckBox.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(11)
@@ -189,10 +231,14 @@ class Ui_MainWindow(object):
         self.showSendingTableCheckBox.setObjectName("showSendingTableCheckBox")
         self.horizontalLayout_6.addWidget(self.showSendingTableCheckBox)
         self.groupModeCheckBox = QtWidgets.QCheckBox(self.groupBox_5)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.groupModeCheckBox.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.groupModeCheckBox.sizePolicy().hasHeightForWidth()
+        )
         self.groupModeCheckBox.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(11)
@@ -226,10 +272,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15.setObjectName("horizontalLayout_15")
         self.stopSniffingButton = QtWidgets.QPushButton(self.groupBox_4)
         self.stopSniffingButton.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.stopSniffingButton.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.stopSniffingButton.sizePolicy().hasHeightForWidth()
+        )
         self.stopSniffingButton.setSizePolicy(sizePolicy)
         self.stopSniffingButton.setMinimumSize(QtCore.QSize(0, 20))
         font = QtGui.QFont()
@@ -239,10 +289,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15.addWidget(self.stopSniffingButton)
         self.startSniffingButton = QtWidgets.QPushButton(self.groupBox_4)
         self.startSniffingButton.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.startSniffingButton.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.startSniffingButton.sizePolicy().hasHeightForWidth()
+        )
         self.startSniffingButton.setSizePolicy(sizePolicy)
         self.startSniffingButton.setMinimumSize(QtCore.QSize(0, 20))
         font = QtGui.QFont()
@@ -257,10 +311,14 @@ class Ui_MainWindow(object):
         self.line.setObjectName("line")
         self.horizontalLayout_15.addWidget(self.line)
         self.loadSessionFromFileButton = QtWidgets.QPushButton(self.groupBox_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.loadSessionFromFileButton.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.loadSessionFromFileButton.sizePolicy().hasHeightForWidth()
+        )
         self.loadSessionFromFileButton.setSizePolicy(sizePolicy)
         self.loadSessionFromFileButton.setMinimumSize(QtCore.QSize(0, 20))
         font = QtGui.QFont()
@@ -270,10 +328,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15.addWidget(self.loadSessionFromFileButton)
         self.abortSessionLoadingButton = QtWidgets.QPushButton(self.groupBox_4)
         self.abortSessionLoadingButton.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.abortSessionLoadingButton.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.abortSessionLoadingButton.sizePolicy().hasHeightForWidth()
+        )
         self.abortSessionLoadingButton.setSizePolicy(sizePolicy)
         self.abortSessionLoadingButton.setMinimumSize(QtCore.QSize(0, 20))
         font = QtGui.QFont()
@@ -289,7 +351,9 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.line_4)
         self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
         self.tabWidget.setEnabled(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.tabWidget.sizePolicy().hasHeightForWidth())
@@ -304,25 +368,37 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.tab)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.mainMessageTableWidget = QtWidgets.QTableWidget(self.tab)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.mainMessageTableWidget.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.mainMessageTableWidget.sizePolicy().hasHeightForWidth()
+        )
         self.mainMessageTableWidget.setSizePolicy(sizePolicy)
         self.mainMessageTableWidget.setMinimumSize(QtCore.QSize(0, 0))
         self.mainMessageTableWidget.setAutoScroll(True)
-        self.mainMessageTableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.mainMessageTableWidget.setEditTriggers(
+            QtWidgets.QAbstractItemView.NoEditTriggers
+        )
         self.mainMessageTableWidget.setAlternatingRowColors(True)
-        self.mainMessageTableWidget.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
-        self.mainMessageTableWidget.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
-        self.mainMessageTableWidget.setVerticalScrollMode(QtWidgets.QAbstractItemView.ScrollPerPixel)
+        self.mainMessageTableWidget.setSelectionMode(
+            QtWidgets.QAbstractItemView.SingleSelection
+        )
+        self.mainMessageTableWidget.setSelectionBehavior(
+            QtWidgets.QAbstractItemView.SelectRows
+        )
+        self.mainMessageTableWidget.setVerticalScrollMode(
+            QtWidgets.QAbstractItemView.ScrollPerPixel
+        )
         self.mainMessageTableWidget.setShowGrid(True)
         self.mainMessageTableWidget.setGridStyle(QtCore.Qt.DotLine)
         self.mainMessageTableWidget.setObjectName("mainMessageTableWidget")
         self.mainMessageTableWidget.setColumnCount(13)
         self.mainMessageTableWidget.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
-        item.setTextAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignBottom)
+        item.setTextAlignment(QtCore.Qt.AlignHCenter | QtCore.Qt.AlignBottom)
         self.mainMessageTableWidget.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
         item.setTextAlignment(QtCore.Qt.AlignCenter)
@@ -363,7 +439,9 @@ class Ui_MainWindow(object):
         self.mainMessageTableWidget.verticalHeader().setStretchLastSection(False)
         self.horizontalLayout_4.addWidget(self.mainMessageTableWidget)
         self.scrollArea_2 = QtWidgets.QScrollArea(self.tab)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.scrollArea_2.sizePolicy().hasHeightForWidth())
@@ -377,10 +455,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout_10.setObjectName("verticalLayout_10")
         self.clearTableButton = QtWidgets.QPushButton(self.scrollAreaWidgetContents_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.clearTableButton.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.clearTableButton.sizePolicy().hasHeightForWidth()
+        )
         self.clearTableButton.setSizePolicy(sizePolicy)
         self.clearTableButton.setMinimumSize(QtCore.QSize(0, 20))
         font = QtGui.QFont()
@@ -389,7 +471,9 @@ class Ui_MainWindow(object):
         self.clearTableButton.setObjectName("clearTableButton")
         self.verticalLayout_10.addWidget(self.clearTableButton)
         self.groupBox_9 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.groupBox_9.sizePolicy().hasHeightForWidth())
@@ -404,10 +488,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.groupBox_9)
         self.verticalLayout_13.setObjectName("verticalLayout_13")
         self.highlightNewIdCheckBox = QtWidgets.QCheckBox(self.groupBox_9)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.highlightNewIdCheckBox.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.highlightNewIdCheckBox.sizePolicy().hasHeightForWidth()
+        )
         self.highlightNewIdCheckBox.setSizePolicy(sizePolicy)
         self.highlightNewIdCheckBox.setMinimumSize(QtCore.QSize(0, 20))
         font = QtGui.QFont()
@@ -417,10 +505,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_13.addWidget(self.highlightNewIdCheckBox)
         self.highlightNewDataCheckBox = QtWidgets.QCheckBox(self.groupBox_9)
         self.highlightNewDataCheckBox.setEnabled(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.highlightNewDataCheckBox.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.highlightNewDataCheckBox.sizePolicy().hasHeightForWidth()
+        )
         self.highlightNewDataCheckBox.setSizePolicy(sizePolicy)
         self.highlightNewDataCheckBox.setMinimumSize(QtCore.QSize(0, 20))
         font = QtGui.QFont()
@@ -433,10 +525,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10.setSpacing(0)
         self.horizontalLayout_10.setObjectName("horizontalLayout_10")
         self.hideOldPacketsCheckBox = QtWidgets.QCheckBox(self.groupBox_9)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.hideOldPacketsCheckBox.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.hideOldPacketsCheckBox.sizePolicy().hasHeightForWidth()
+        )
         self.hideOldPacketsCheckBox.setSizePolicy(sizePolicy)
         self.hideOldPacketsCheckBox.setMinimumSize(QtCore.QSize(0, 20))
         font = QtGui.QFont()
@@ -446,10 +542,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10.addWidget(self.hideOldPacketsCheckBox)
         self.hideOldPeriod = QtWidgets.QSpinBox(self.groupBox_9)
         self.hideOldPeriod.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.hideOldPeriod.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.hideOldPeriod.sizePolicy().hasHeightForWidth()
+        )
         self.hideOldPeriod.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -457,14 +557,20 @@ class Ui_MainWindow(object):
         self.hideOldPeriod.setProperty("value", 5)
         self.hideOldPeriod.setObjectName("hideOldPeriod")
         self.horizontalLayout_10.addWidget(self.hideOldPeriod)
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
+        )
         self.horizontalLayout_10.addItem(spacerItem)
         self.verticalLayout_13.addLayout(self.horizontalLayout_10)
         self.showOnlyIdsCheckBox = QtWidgets.QCheckBox(self.groupBox_9)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.showOnlyIdsCheckBox.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.showOnlyIdsCheckBox.sizePolicy().hasHeightForWidth()
+        )
         self.showOnlyIdsCheckBox.setSizePolicy(sizePolicy)
         self.showOnlyIdsCheckBox.setMinimumSize(QtCore.QSize(0, 20))
         font = QtGui.QFont()
@@ -474,10 +580,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_13.addWidget(self.showOnlyIdsCheckBox)
         self.showOnlyIdsLineEdit = QtWidgets.QLineEdit(self.groupBox_9)
         self.showOnlyIdsLineEdit.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.showOnlyIdsLineEdit.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.showOnlyIdsLineEdit.sizePolicy().hasHeightForWidth()
+        )
         self.showOnlyIdsLineEdit.setSizePolicy(sizePolicy)
         self.showOnlyIdsLineEdit.setMinimumSize(QtCore.QSize(0, 20))
         self.showOnlyIdsLineEdit.setMaximumSize(QtCore.QSize(16777215, 16777215))
@@ -487,10 +597,14 @@ class Ui_MainWindow(object):
         self.showOnlyIdsLineEdit.setObjectName("showOnlyIdsLineEdit")
         self.verticalLayout_13.addWidget(self.showOnlyIdsLineEdit)
         self.hideIdsCheckBox = QtWidgets.QCheckBox(self.groupBox_9)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.hideIdsCheckBox.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.hideIdsCheckBox.sizePolicy().hasHeightForWidth()
+        )
         self.hideIdsCheckBox.setSizePolicy(sizePolicy)
         self.hideIdsCheckBox.setMinimumSize(QtCore.QSize(0, 20))
         font = QtGui.QFont()
@@ -500,10 +614,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_13.addWidget(self.hideIdsCheckBox)
         self.hideIdsLineEdit = QtWidgets.QLineEdit(self.groupBox_9)
         self.hideIdsLineEdit.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.hideIdsLineEdit.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.hideIdsLineEdit.sizePolicy().hasHeightForWidth()
+        )
         self.hideIdsLineEdit.setSizePolicy(sizePolicy)
         self.hideIdsLineEdit.setMinimumSize(QtCore.QSize(0, 20))
         self.hideIdsLineEdit.setMaximumSize(QtCore.QSize(16777215, 16777215))
@@ -522,7 +640,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_13.addWidget(self.hideAllPacketsButton)
         self.verticalLayout_10.addWidget(self.groupBox_9)
         self.groupBox_8 = QtWidgets.QGroupBox(self.scrollAreaWidgetContents_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.groupBox_8.sizePolicy().hasHeightForWidth())
@@ -543,10 +663,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
         self.saveSelectedIdInDictButton = QtWidgets.QPushButton(self.groupBox_8)
         self.saveSelectedIdInDictButton.setEnabled(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.saveSelectedIdInDictButton.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.saveSelectedIdInDictButton.sizePolicy().hasHeightForWidth()
+        )
         self.saveSelectedIdInDictButton.setSizePolicy(sizePolicy)
         self.saveSelectedIdInDictButton.setMinimumSize(QtCore.QSize(0, 20))
         self.saveSelectedIdInDictButton.setMaximumSize(QtCore.QSize(16777215, 20))
@@ -556,10 +680,14 @@ class Ui_MainWindow(object):
         self.saveSelectedIdInDictButton.setObjectName("saveSelectedIdInDictButton")
         self.horizontalLayout_7.addWidget(self.saveSelectedIdInDictButton)
         self.saveIdToDictLineEdit = QtWidgets.QLineEdit(self.groupBox_8)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.saveIdToDictLineEdit.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.saveIdToDictLineEdit.sizePolicy().hasHeightForWidth()
+        )
         self.saveIdToDictLineEdit.setSizePolicy(sizePolicy)
         self.saveIdToDictLineEdit.setMinimumSize(QtCore.QSize(0, 0))
         self.saveIdToDictLineEdit.setMaximumSize(QtCore.QSize(50, 25))
@@ -569,10 +697,14 @@ class Ui_MainWindow(object):
         self.saveIdToDictLineEdit.setObjectName("saveIdToDictLineEdit")
         self.horizontalLayout_7.addWidget(self.saveIdToDictLineEdit)
         self.saveLabelToDictLineEdit = QtWidgets.QLineEdit(self.groupBox_8)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.saveLabelToDictLineEdit.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.saveLabelToDictLineEdit.sizePolicy().hasHeightForWidth()
+        )
         self.saveLabelToDictLineEdit.setSizePolicy(sizePolicy)
         self.saveLabelToDictLineEdit.setMinimumSize(QtCore.QSize(20, 0))
         self.saveLabelToDictLineEdit.setMaximumSize(QtCore.QSize(100, 25))
@@ -588,10 +720,14 @@ class Ui_MainWindow(object):
         self.line_5.setObjectName("line_5")
         self.verticalLayout_12.addWidget(self.line_5)
         self.addToDecodedPushButton = QtWidgets.QPushButton(self.groupBox_8)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.addToDecodedPushButton.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.addToDecodedPushButton.sizePolicy().hasHeightForWidth()
+        )
         self.addToDecodedPushButton.setSizePolicy(sizePolicy)
         self.addToDecodedPushButton.setMinimumSize(QtCore.QSize(0, 20))
         self.addToDecodedPushButton.setMaximumSize(QtCore.QSize(16777215, 20))
@@ -610,10 +746,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.groupBox_7)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.saveSessionToFileButton = QtWidgets.QPushButton(self.groupBox_7)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.saveSessionToFileButton.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.saveSessionToFileButton.sizePolicy().hasHeightForWidth()
+        )
         self.saveSessionToFileButton.setSizePolicy(sizePolicy)
         self.saveSessionToFileButton.setMinimumSize(QtCore.QSize(0, 20))
         self.saveSessionToFileButton.setMaximumSize(QtCore.QSize(16777215, 20))
@@ -629,10 +769,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addWidget(self.line_2)
         self.playbackMainTableButton = QtWidgets.QPushButton(self.groupBox_7)
         self.playbackMainTableButton.setEnabled(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.playbackMainTableButton.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.playbackMainTableButton.sizePolicy().hasHeightForWidth()
+        )
         self.playbackMainTableButton.setSizePolicy(sizePolicy)
         self.playbackMainTableButton.setMinimumSize(QtCore.QSize(0, 20))
         self.playbackMainTableButton.setMaximumSize(QtCore.QSize(16777215, 20))
@@ -656,7 +800,9 @@ class Ui_MainWindow(object):
         self.playBackProgressBar.setObjectName("playBackProgressBar")
         self.verticalLayout_4.addWidget(self.playBackProgressBar)
         self.verticalLayout_10.addWidget(self.groupBox_7)
-        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        spacerItem1 = QtWidgets.QSpacerItem(
+            20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding
+        )
         self.verticalLayout_10.addItem(spacerItem1)
         self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_3)
         self.horizontalLayout_4.addWidget(self.scrollArea_2)
@@ -672,18 +818,30 @@ class Ui_MainWindow(object):
         self.horizontalLayout_12 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_12.setObjectName("horizontalLayout_12")
         self.decodedMessagesTableWidget = QtWidgets.QTableWidget(self.tab_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.decodedMessagesTableWidget.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.decodedMessagesTableWidget.sizePolicy().hasHeightForWidth()
+        )
         self.decodedMessagesTableWidget.setSizePolicy(sizePolicy)
         self.decodedMessagesTableWidget.setMinimumSize(QtCore.QSize(0, 0))
         self.decodedMessagesTableWidget.setAutoScroll(True)
-        self.decodedMessagesTableWidget.setEditTriggers(QtWidgets.QAbstractItemView.DoubleClicked)
+        self.decodedMessagesTableWidget.setEditTriggers(
+            QtWidgets.QAbstractItemView.DoubleClicked
+        )
         self.decodedMessagesTableWidget.setAlternatingRowColors(True)
-        self.decodedMessagesTableWidget.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
-        self.decodedMessagesTableWidget.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
-        self.decodedMessagesTableWidget.setVerticalScrollMode(QtWidgets.QAbstractItemView.ScrollPerPixel)
+        self.decodedMessagesTableWidget.setSelectionMode(
+            QtWidgets.QAbstractItemView.SingleSelection
+        )
+        self.decodedMessagesTableWidget.setSelectionBehavior(
+            QtWidgets.QAbstractItemView.SelectRows
+        )
+        self.decodedMessagesTableWidget.setVerticalScrollMode(
+            QtWidgets.QAbstractItemView.ScrollPerPixel
+        )
         self.decodedMessagesTableWidget.setShowGrid(True)
         self.decodedMessagesTableWidget.setGridStyle(QtCore.Qt.DotLine)
         self.decodedMessagesTableWidget.setObjectName("decodedMessagesTableWidget")
@@ -731,7 +889,9 @@ class Ui_MainWindow(object):
         self.decodedMessagesTableWidget.verticalHeader().setStretchLastSection(False)
         self.horizontalLayout_12.addWidget(self.decodedMessagesTableWidget)
         self.groupBox_2 = QtWidgets.QGroupBox(self.tab_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.groupBox_2.sizePolicy().hasHeightForWidth())
@@ -741,17 +901,25 @@ class Ui_MainWindow(object):
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.groupBox_2)
         self.verticalLayout_6.setObjectName("verticalLayout_6")
         self.deleteDecodedPacketLinePushButton = QtWidgets.QPushButton(self.groupBox_2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.deleteDecodedPacketLinePushButton.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.deleteDecodedPacketLinePushButton.sizePolicy().hasHeightForWidth()
+        )
         self.deleteDecodedPacketLinePushButton.setSizePolicy(sizePolicy)
         self.deleteDecodedPacketLinePushButton.setMinimumSize(QtCore.QSize(0, 0))
-        self.deleteDecodedPacketLinePushButton.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.deleteDecodedPacketLinePushButton.setMaximumSize(
+            QtCore.QSize(16777215, 16777215)
+        )
         font = QtGui.QFont()
         font.setPointSize(11)
         self.deleteDecodedPacketLinePushButton.setFont(font)
-        self.deleteDecodedPacketLinePushButton.setObjectName("deleteDecodedPacketLinePushButton")
+        self.deleteDecodedPacketLinePushButton.setObjectName(
+            "deleteDecodedPacketLinePushButton"
+        )
         self.verticalLayout_6.addWidget(self.deleteDecodedPacketLinePushButton)
         self.sendSelectedDecodedPacketButton = QtWidgets.QPushButton(self.groupBox_2)
         self.sendSelectedDecodedPacketButton.setMinimumSize(QtCore.QSize(0, 0))
@@ -759,9 +927,16 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(11)
         self.sendSelectedDecodedPacketButton.setFont(font)
-        self.sendSelectedDecodedPacketButton.setObjectName("sendSelectedDecodedPacketButton")
+        self.sendSelectedDecodedPacketButton.setObjectName(
+            "sendSelectedDecodedPacketButton"
+        )
         self.verticalLayout_6.addWidget(self.sendSelectedDecodedPacketButton)
-        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.MinimumExpanding)
+        spacerItem2 = QtWidgets.QSpacerItem(
+            20,
+            40,
+            QtWidgets.QSizePolicy.Minimum,
+            QtWidgets.QSizePolicy.MinimumExpanding,
+        )
         self.verticalLayout_6.addItem(spacerItem2)
         self.horizontalLayout_12.addWidget(self.groupBox_2)
         self.horizontalLayout_13.addLayout(self.horizontalLayout_12)
@@ -796,7 +971,9 @@ class Ui_MainWindow(object):
         self.gridLayout_4.setObjectName("gridLayout_4")
         self.checkBox_6 = QtWidgets.QCheckBox(self.groupBox_6)
         self.checkBox_6.setEnabled(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.checkBox_6.sizePolicy().hasHeightForWidth())
@@ -808,7 +985,9 @@ class Ui_MainWindow(object):
         self.gridLayout_4.addWidget(self.checkBox_6, 0, 0, 1, 1)
         self.verticalLayout_5.addLayout(self.gridLayout_4)
         self.line_3 = QtWidgets.QFrame(self.groupBox_6)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.line_3.sizePolicy().hasHeightForWidth())
@@ -819,17 +998,26 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.addWidget(self.line_3)
         self.clearLabelDictButton = QtWidgets.QPushButton(self.groupBox_6)
         self.clearLabelDictButton.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.clearLabelDictButton.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.clearLabelDictButton.sizePolicy().hasHeightForWidth()
+        )
         self.clearLabelDictButton.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(11)
         self.clearLabelDictButton.setFont(font)
         self.clearLabelDictButton.setObjectName("clearLabelDictButton")
         self.verticalLayout_5.addWidget(self.clearLabelDictButton)
-        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.MinimumExpanding)
+        spacerItem3 = QtWidgets.QSpacerItem(
+            20,
+            40,
+            QtWidgets.QSizePolicy.Minimum,
+            QtWidgets.QSizePolicy.MinimumExpanding,
+        )
         self.verticalLayout_5.addItem(spacerItem3)
         self.verticalLayout_8.addLayout(self.verticalLayout_5)
         self.horizontalLayout.addWidget(self.groupBox_6)
@@ -837,10 +1025,14 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.tabWidget)
         self.sendingGroupBox = QtWidgets.QGroupBox(self.centralwidget)
         self.sendingGroupBox.setEnabled(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.sendingGroupBox.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.sendingGroupBox.sizePolicy().hasHeightForWidth()
+        )
         self.sendingGroupBox.setSizePolicy(sizePolicy)
         self.sendingGroupBox.setMinimumSize(QtCore.QSize(0, 0))
         self.sendingGroupBox.setMaximumSize(QtCore.QSize(16777215, 16777215))
@@ -852,13 +1044,20 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11 = QtWidgets.QHBoxLayout(self.sendingGroupBox)
         self.horizontalLayout_11.setObjectName("horizontalLayout_11")
         self.txTable = QtWidgets.QTableWidget(self.sendingGroupBox)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.txTable.sizePolicy().hasHeightForWidth())
         self.txTable.setSizePolicy(sizePolicy)
         self.txTable.setMaximumSize(QtCore.QSize(16777215, 100))
-        self.txTable.setEditTriggers(QtWidgets.QAbstractItemView.AnyKeyPressed|QtWidgets.QAbstractItemView.DoubleClicked|QtWidgets.QAbstractItemView.EditKeyPressed|QtWidgets.QAbstractItemView.SelectedClicked)
+        self.txTable.setEditTriggers(
+            QtWidgets.QAbstractItemView.AnyKeyPressed
+            | QtWidgets.QAbstractItemView.DoubleClicked
+            | QtWidgets.QAbstractItemView.EditKeyPressed
+            | QtWidgets.QAbstractItemView.SelectedClicked
+        )
         self.txTable.setSelectionMode(QtWidgets.QAbstractItemView.ExtendedSelection)
         self.txTable.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
         self.txTable.setRowCount(0)
@@ -878,10 +1077,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setContentsMargins(-1, -1, 10, -1)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.newTxTableRow = QtWidgets.QPushButton(self.sendingGroupBox)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.newTxTableRow.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.newTxTableRow.sizePolicy().hasHeightForWidth()
+        )
         self.newTxTableRow.setSizePolicy(sizePolicy)
         self.newTxTableRow.setMinimumSize(QtCore.QSize(0, 0))
         self.newTxTableRow.setMaximumSize(QtCore.QSize(16777215, 20))
@@ -891,10 +1094,14 @@ class Ui_MainWindow(object):
         self.newTxTableRow.setObjectName("newTxTableRow")
         self.verticalLayout_2.addWidget(self.newTxTableRow)
         self.removeTxTableRow = QtWidgets.QPushButton(self.sendingGroupBox)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.removeTxTableRow.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.removeTxTableRow.sizePolicy().hasHeightForWidth()
+        )
         self.removeTxTableRow.setSizePolicy(sizePolicy)
         self.removeTxTableRow.setMinimumSize(QtCore.QSize(250, 0))
         self.removeTxTableRow.setMaximumSize(QtCore.QSize(150, 20))
@@ -941,10 +1148,14 @@ class Ui_MainWindow(object):
         self.gridLayout_3.setObjectName("gridLayout_3")
         self.txDataRadioButton = QtWidgets.QRadioButton(self.groupBox_3)
         self.txDataRadioButton.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.txDataRadioButton.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.txDataRadioButton.sizePolicy().hasHeightForWidth()
+        )
         self.txDataRadioButton.setSizePolicy(sizePolicy)
         self.txDataRadioButton.setMinimumSize(QtCore.QSize(0, 20))
         font = QtGui.QFont()
@@ -956,26 +1167,38 @@ class Ui_MainWindow(object):
         self.gridLayout_3.addWidget(self.txDataRadioButton, 0, 4, 1, 1)
         self.snifferMsgPlainTextEdit = QtWidgets.QPlainTextEdit(self.groupBox_3)
         self.snifferMsgPlainTextEdit.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.snifferMsgPlainTextEdit.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.snifferMsgPlainTextEdit.sizePolicy().hasHeightForWidth()
+        )
         self.snifferMsgPlainTextEdit.setSizePolicy(sizePolicy)
         self.snifferMsgPlainTextEdit.setMinimumSize(QtCore.QSize(300, 25))
         self.snifferMsgPlainTextEdit.setMaximumSize(QtCore.QSize(16777215, 25))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.snifferMsgPlainTextEdit.setFont(font)
-        self.snifferMsgPlainTextEdit.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.snifferMsgPlainTextEdit.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.snifferMsgPlainTextEdit.setVerticalScrollBarPolicy(
+            QtCore.Qt.ScrollBarAlwaysOff
+        )
+        self.snifferMsgPlainTextEdit.setHorizontalScrollBarPolicy(
+            QtCore.Qt.ScrollBarAlwaysOff
+        )
         self.snifferMsgPlainTextEdit.setObjectName("snifferMsgPlainTextEdit")
         self.gridLayout_3.addWidget(self.snifferMsgPlainTextEdit, 0, 10, 1, 1)
         self.serialConnectedCheckBox = QtWidgets.QCheckBox(self.groupBox_3)
         self.serialConnectedCheckBox.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.serialConnectedCheckBox.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.serialConnectedCheckBox.sizePolicy().hasHeightForWidth()
+        )
         self.serialConnectedCheckBox.setSizePolicy(sizePolicy)
         self.serialConnectedCheckBox.setMinimumSize(QtCore.QSize(0, 20))
         font = QtGui.QFont()
@@ -988,7 +1211,9 @@ class Ui_MainWindow(object):
         self.gridLayout_3.addWidget(self.serialConnectedCheckBox, 0, 2, 1, 1)
         self.label_2 = QtWidgets.QLabel(self.groupBox_3)
         self.label_2.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
@@ -1001,10 +1226,14 @@ class Ui_MainWindow(object):
         self.gridLayout_3.addWidget(self.label_2, 0, 9, 1, 1)
         self.rxDataRadioButton = QtWidgets.QRadioButton(self.groupBox_3)
         self.rxDataRadioButton.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.rxDataRadioButton.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.rxDataRadioButton.sizePolicy().hasHeightForWidth()
+        )
         self.rxDataRadioButton.setSizePolicy(sizePolicy)
         self.rxDataRadioButton.setMinimumSize(QtCore.QSize(0, 20))
         font = QtGui.QFont()
@@ -1017,10 +1246,14 @@ class Ui_MainWindow(object):
         self.gridLayout_3.addWidget(self.rxDataRadioButton, 0, 3, 1, 1)
         self.packageCounterLabel = QtWidgets.QLabel(self.groupBox_3)
         self.packageCounterLabel.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.packageCounterLabel.sizePolicy().hasHeightForWidth())
+        sizePolicy.setHeightForWidth(
+            self.packageCounterLabel.sizePolicy().hasHeightForWidth()
+        )
         self.packageCounterLabel.setSizePolicy(sizePolicy)
         self.packageCounterLabel.setMinimumSize(QtCore.QSize(0, 20))
         font = QtGui.QFont()
@@ -1030,7 +1263,9 @@ class Ui_MainWindow(object):
         self.gridLayout_3.addWidget(self.packageCounterLabel, 0, 6, 1, 1)
         self.package_2 = QtWidgets.QLabel(self.groupBox_3)
         self.package_2.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(
+            QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred
+        )
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.package_2.sizePolicy().hasHeightForWidth())
@@ -1047,7 +1282,9 @@ class Ui_MainWindow(object):
         self.showControlsButton.setFont(font)
         self.showControlsButton.setObjectName("showControlsButton")
         self.gridLayout_3.addWidget(self.showControlsButton, 0, 12, 1, 1)
-        spacerItem4 = QtWidgets.QSpacerItem(40, 0, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem4 = QtWidgets.QSpacerItem(
+            40, 0, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum
+        )
         self.gridLayout_3.addItem(spacerItem4, 0, 7, 1, 1)
         self.line_7 = QtWidgets.QFrame(self.groupBox_3)
         self.line_7.setFrameShape(QtWidgets.QFrame.VLine)
@@ -1060,11 +1297,15 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.tabWidget.setCurrentIndex(0)
-        self.showOnlyIdsCheckBox.clicked['bool'].connect(self.showOnlyIdsLineEdit.setEnabled)
-        self.hideIdsCheckBox.clicked['bool'].connect(self.hideIdsLineEdit.setEnabled)
-        self.checkBox_6.clicked['bool'].connect(self.clearLabelDictButton.setEnabled)
-        self.hideOldPacketsCheckBox.clicked['bool'].connect(self.hideOldPeriod.setEnabled)
-        self.showSendingTableCheckBox.clicked['bool'].connect(self.sendingGroupBox.hide)
+        self.showOnlyIdsCheckBox.clicked["bool"].connect(
+            self.showOnlyIdsLineEdit.setEnabled
+        )
+        self.hideIdsCheckBox.clicked["bool"].connect(self.hideIdsLineEdit.setEnabled)
+        self.checkBox_6.clicked["bool"].connect(self.clearLabelDictButton.setEnabled)
+        self.hideOldPacketsCheckBox.clicked["bool"].connect(
+            self.hideOldPeriod.setEnabled
+        )
+        self.showSendingTableCheckBox.clicked["bool"].connect(self.sendingGroupBox.hide)
         self.hideControlsButton.pressed.connect(self.groupBox_4.hide)
         self.hideControlsButton.pressed.connect(self.groupBox_5.hide)
         self.hideControlsButton.pressed.connect(self.groupBox.hide)
@@ -1075,12 +1316,16 @@ class Ui_MainWindow(object):
         self.showControlsButton.pressed.connect(self.groupBox_4.show)
         self.showControlsButton.pressed.connect(self.groupBox_5.show)
         self.showControlsButton.pressed.connect(self.groupBox.show)
-        self.hideIdsCheckBox.clicked['bool'].connect(self.hideAllPacketsButton.setEnabled)
+        self.hideIdsCheckBox.clicked["bool"].connect(
+            self.hideAllPacketsButton.setEnabled
+        )
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "CanSniffer # canDrive 2020"))
+        MainWindow.setWindowTitle(
+            _translate("MainWindow", "CanSniffer # canDrive 2020")
+        )
         self.groupBox.setTitle(_translate("MainWindow", "Serial connection"))
         self.portScanButton.setText(_translate("MainWindow", "Scan"))
         self.portConnectButton.setText(_translate("MainWindow", "Connect"))
@@ -1098,8 +1343,12 @@ class Ui_MainWindow(object):
         self.groupBox_4.setTitle(_translate("MainWindow", "Actions"))
         self.stopSniffingButton.setText(_translate("MainWindow", "Stop sniffing"))
         self.startSniffingButton.setText(_translate("MainWindow", "Start sniffing"))
-        self.loadSessionFromFileButton.setText(_translate("MainWindow", "Load session from file"))
-        self.abortSessionLoadingButton.setText(_translate("MainWindow", "Abort session loading"))
+        self.loadSessionFromFileButton.setText(
+            _translate("MainWindow", "Load session from file")
+        )
+        self.abortSessionLoadingButton.setText(
+            _translate("MainWindow", "Abort session loading")
+        )
         self.mainMessageTableWidget.setSortingEnabled(False)
         item = self.mainMessageTableWidget.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "TimeStamp (s)"))
@@ -1129,24 +1378,49 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "D7"))
         self.clearTableButton.setText(_translate("MainWindow", "Clear table"))
         self.groupBox_9.setTitle(_translate("MainWindow", "Filters"))
-        self.highlightNewIdCheckBox.setText(_translate("MainWindow", "Highlight new packets"))
-        self.highlightNewDataCheckBox.setText(_translate("MainWindow", "Highlight new data"))
-        self.hideOldPacketsCheckBox.setText(_translate("MainWindow", "Hide packets older than (s):"))
-        self.showOnlyIdsCheckBox.setText(_translate("MainWindow", "Show packets with the following IDs:"))
-        self.showOnlyIdsLineEdit.setPlaceholderText(_translate("MainWindow", "ID1 ID2 ..."))
-        self.hideIdsCheckBox.setText(_translate("MainWindow", "Hide packets with the following IDs:"))
+        self.highlightNewIdCheckBox.setText(
+            _translate("MainWindow", "Highlight new packets")
+        )
+        self.highlightNewDataCheckBox.setText(
+            _translate("MainWindow", "Highlight new value")
+        )
+        self.hideOldPacketsCheckBox.setText(
+            _translate("MainWindow", "Hide packets older than (s):")
+        )
+        self.showOnlyIdsCheckBox.setText(
+            _translate("MainWindow", "Show packets with the following IDs:")
+        )
+        self.showOnlyIdsLineEdit.setPlaceholderText(
+            _translate("MainWindow", "ID1 ID2 ...")
+        )
+        self.hideIdsCheckBox.setText(
+            _translate("MainWindow", "Hide packets with the following IDs:")
+        )
         self.hideIdsLineEdit.setPlaceholderText(_translate("MainWindow", "ID1 ID2 ..."))
         self.hideAllPacketsButton.setText(_translate("MainWindow", "Hide all packets"))
         self.groupBox_8.setTitle(_translate("MainWindow", "Decoding"))
-        self.saveSelectedIdInDictButton.setText(_translate("MainWindow", "Save to Dict"))
+        self.saveSelectedIdInDictButton.setText(
+            _translate("MainWindow", "Save to Dict")
+        )
         self.saveIdToDictLineEdit.setPlaceholderText(_translate("MainWindow", "ID"))
-        self.saveLabelToDictLineEdit.setPlaceholderText(_translate("MainWindow", "LABEL"))
-        self.addToDecodedPushButton.setText(_translate("MainWindow", "Add selected to decoded list"))
+        self.saveLabelToDictLineEdit.setPlaceholderText(
+            _translate("MainWindow", "LABEL")
+        )
+        self.addToDecodedPushButton.setText(
+            _translate("MainWindow", "Add selected to decoded list")
+        )
         self.groupBox_7.setTitle(_translate("MainWindow", "Session window"))
-        self.saveSessionToFileButton.setText(_translate("MainWindow", "Save session to file"))
-        self.playbackMainTableButton.setText(_translate("MainWindow", "Playback all messages"))
+        self.saveSessionToFileButton.setText(
+            _translate("MainWindow", "Save session to file")
+        )
+        self.playbackMainTableButton.setText(
+            _translate("MainWindow", "Playback all messages")
+        )
         self.stopPlayBackButton.setText(_translate("MainWindow", "Stop playback"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Message window"))
+        self.tabWidget.setTabText(
+            self.tabWidget.indexOf(self.tab),
+            _translate("MainWindow", "CanMessage window"),
+        )
         self.decodedMessagesTableWidget.setSortingEnabled(True)
         item = self.decodedMessagesTableWidget.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Label"))
@@ -1175,9 +1449,16 @@ class Ui_MainWindow(object):
         item = self.decodedMessagesTableWidget.horizontalHeaderItem(12)
         item.setText(_translate("MainWindow", "D7"))
         self.groupBox_2.setTitle(_translate("MainWindow", "Operations"))
-        self.deleteDecodedPacketLinePushButton.setText(_translate("MainWindow", "Delete selected line"))
-        self.sendSelectedDecodedPacketButton.setText(_translate("MainWindow", "Send selected packet"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("MainWindow", "Decoded messages"))
+        self.deleteDecodedPacketLinePushButton.setText(
+            _translate("MainWindow", "Delete selected line")
+        )
+        self.sendSelectedDecodedPacketButton.setText(
+            _translate("MainWindow", "Send selected packet")
+        )
+        self.tabWidget.setTabText(
+            self.tabWidget.indexOf(self.tab_3),
+            _translate("MainWindow", "Decoded messages"),
+        )
         self.idLabelDictTable.setSortingEnabled(True)
         item = self.idLabelDictTable.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "ID"))
@@ -1186,7 +1467,10 @@ class Ui_MainWindow(object):
         self.groupBox_6.setTitle(_translate("MainWindow", "Operations"))
         self.checkBox_6.setText(_translate("MainWindow", "Enable table editing"))
         self.clearLabelDictButton.setText(_translate("MainWindow", "Clear Dictionary"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Label dictionary"))
+        self.tabWidget.setTabText(
+            self.tabWidget.indexOf(self.tab_2),
+            _translate("MainWindow", "Label dictionary"),
+        )
         self.sendingGroupBox.setTitle(_translate("MainWindow", "Sending"))
         self.txTable.setSortingEnabled(False)
         item = self.txTable.horizontalHeaderItem(0)
@@ -1199,13 +1483,17 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Data (hex)"))
         self.newTxTableRow.setText(_translate("MainWindow", "Add new row"))
         self.removeTxTableRow.setText(_translate("MainWindow", "Remove selected row"))
-        self.sendTxTableButton.setText(_translate("MainWindow", "Send selected commands"))
+        self.sendTxTableButton.setText(
+            _translate("MainWindow", "Send selected commands")
+        )
         self.repeatedDelayCheckBox.setText(_translate("MainWindow", "Repeated Delay"))
         self.groupBox_3.setTitle(_translate("MainWindow", "Status"))
-        self.txDataRadioButton.setText(_translate("MainWindow", "Transmitting data"))
-        self.serialConnectedCheckBox.setText(_translate("MainWindow", "Connected to sniffer"))
+        self.txDataRadioButton.setText(_translate("MainWindow", "Transmitting value"))
+        self.serialConnectedCheckBox.setText(
+            _translate("MainWindow", "Connected to sniffer")
+        )
         self.label_2.setText(_translate("MainWindow", "Packet from Sniffer:"))
-        self.rxDataRadioButton.setText(_translate("MainWindow", "Receiving data"))
+        self.rxDataRadioButton.setText(_translate("MainWindow", "Receiving value"))
         self.packageCounterLabel.setText(_translate("MainWindow", "0"))
         self.package_2.setText(_translate("MainWindow", "Package count:"))
         self.showControlsButton.setText(_translate("MainWindow", "Show Controls"))

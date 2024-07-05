@@ -1,0 +1,231 @@
+/*-----QWidget-----*/
+QWidget {
+	background-color: #3a3a3a;
+	color: #cccccc;
+
+	selection-background-color: #e67300;
+	selection-color: #cccccc;
+
+	min-height: 24px;
+	font-size: 18px;
+
+}
+
+/*-----QMenuBar-----*/
+QMenuBar {
+}
+QMenuBar::item {
+}
+QMenuBar::item:selected {
+	background-color: #994d00;
+}
+QMenuBar::item:pressed {
+	background-color: #e67300;
+}
+
+
+/*-----QMenu-----*/
+QMenu {
+}
+
+QMenu::item {
+    padding: 2px 20px 2px 20px;
+}
+QMenu::separator {
+	height: 1px;
+}
+QMenu::item:disabled {
+    color: #888888;
+    background-color: #444444;
+    padding: 2px 20px 2px 20px;
+}
+QMenu::item:selected {
+    background-color: #994d00;
+}
+QMenu::item:selected:disabled {
+    color: #888888;
+    background-color: #444444;
+}
+
+
+/*-----QStatusBar-----*/
+QStatusBar {
+    min-height: 48px;
+}
+
+
+/*-----QPushButton-----*/
+QPushButton {
+	color: #cccccc;
+	min-width: 80px;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: #888888;
+	padding: 5px;
+}
+QPushButton::flat {
+	background-color: transparent;
+	border: none;
+	color: #fff;
+}
+QPushButton::disabled {
+	background-color: #444444;
+	color: #888888;
+	border-color: #051a39;
+}
+QPushButton::hover {
+	background-color:  #994d00;
+}
+QPushButton::pressed {
+	background-color: #444444;
+	color: #cccccc;
+}
+QPushButton::checked {
+}
+
+
+/*-----QLineEdit-----*/
+QLineEdit {
+	background-color: #3a3a3a;
+	color : #cccccc;
+	border: 1px solid;
+	border-radius: 2px;
+	padding: 3px;
+	padding-left: 5px;
+    border-color: #888888;
+
+}
+
+
+/*-----QPlainTExtEdit-----*/
+QPlainTextEdit {
+	background-color: #3a3a3a;
+	color : #cccccc;
+	border: 1px solid;
+	border-radius: 2px;
+	padding: 3px;
+	padding-left: 5px;
+    border-color: #888888;
+
+}
+
+
+/*-----QTabBar-----*/
+QTabBar::tab {
+    background-color: #3a3a3a;
+	color: #cccccc;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #888888;
+	padding: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+QTabWidget::pane {
+}
+QTabBar::tab:last {
+	margin-right: 0;
+}
+QTabBar::tab:!selected {
+	color: #cccccc;
+	border-bottom-style: solid;
+	background-color: #131313;
+}
+QTabBar::tab:selected {
+	margin-bottom: 0px;
+}
+QTabBar::tab:!selected:hover {
+    background-color: #994d00;
+}
+
+
+/*-----QComboBox-----*/
+QComboBox {
+    background-color: #3a3a3a;
+    border: 1px solid;
+    border-color: #888888;
+    padding-left: 6px;
+    color: #cccccc;
+    height: 24px;
+}
+QComboBox::disabled {
+	background-color: #444444;
+	color: #888888;
+	border-color: #051a39;
+}
+QComboBox:on {
+	color: #cccccc;
+}
+QComboBox QAbstractItemView {
+    background-color: #3a3a3a;
+    color: #cccccc;
+    border: 1px solid black;
+    selection-background-color: #e67300;
+    outline: 0;
+}
+
+
+/*-----QSpinBox & QDateTimeEdit-----*/
+QSpinBox, QDateTimeEdit {
+    background-color: #3a3a3a;
+	color : #cccccc;
+	border: 1px solid;
+	border-color: #888888;
+	padding: 3px;
+	padding-left: 5px;
+    border-radius : 2px;
+}
+/*
+QSpinBox::up-button,QDateTimeEdit::up-button {
+	border-top-right-radius:2px;
+	background-color: #777777;
+    width: 16px;
+    border-width: 1px;
+}
+QSpinBox::up-button:hover, QDateTimeEdit::up-button:hover {
+	background-color: #994d00;
+	color: #cccccc;
+
+}
+
+QSpinBox::up-button:pressed,QDateTimeEdit::up-button:pressed {
+	background-color: #252525;
+    width: 16px;
+    border-width: 1px;
+}
+QSpinBox::up-arrow,QDateTimeEdit::up-arrow{
+    image: url(://arrow-up.png);
+    width: 7px;
+    height: 7px;
+}
+QSpinBox::down-button,QDateTimeEdit::down-button {
+	border-bottom-right-radius:2px;
+	background-color: #777777;
+    width: 16px;
+    border-width: 1px;
+}
+QSpinBox::down-button:hover,QDateTimeEdit::down-button:hover {
+	background-color: #585858;
+}
+QSpinBox::down-button:pressed,QDateTimeEdit::down-button:pressed {
+	background-color: #252525;
+    width: 16px;
+    border-width: 1px;
+}
+QSpinBox::down-arrow,QDateTimeEdit::down-arrow{
+    image: url(://arrow-down.png);
+    width: 7px;
+    height: 7px;
+}
+*/
+
+
+/*-----QGroupBox-----*/
+QGroupBox {
+    border-color: #888888;
+    color: #cccccc;
+}
+QGroupBox::title {
+    color: #cccccc;
+}

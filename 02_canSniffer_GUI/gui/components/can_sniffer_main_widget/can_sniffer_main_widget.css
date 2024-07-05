@@ -1,0 +1,8 @@
+
+
+QTabBar::tab {
+    height: 30px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 14px;
+}

@@ -25,7 +25,7 @@ class FileLoaderThread(QThread):
         while self.isRunning:
             if self.path is not None:
                 try:
-                    with open(str(self.path), 'r') as stream:
+                    with open(str(self.path), "r") as stream:
                         for rowData in csv.reader(stream):
                             if not self.isRunning:
                                 break

@@ -40,10 +40,10 @@ class SerialWriterThread(QThread):
                 element = self.writerQ.get()
                 if isinstance(element, list):
                     num = self.serial.write(bytearray(element))
-                    #print(bytearray(element))
+                    # print(bytearray(element))
                 else:
                     num = self.serial.write(element.encode("utf-8"))
-                    #print(element.encode("utf-8"))
+                    # print(element.encode("utf-8"))
 
                 if self.normalWriteDelay != 0:
                     self.msleep(self.normalWriteDelay)
