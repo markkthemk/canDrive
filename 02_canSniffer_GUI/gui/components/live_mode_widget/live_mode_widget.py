@@ -78,6 +78,9 @@ class LiveModeWidget(QWidget):
                 self.__combo_can_channel.setEnabled(False)
 
     def __on_connecting(self):
+        if not self.__connected_to_serial and self.__combo_com_ports.currentText() == "":
+            return
+
         self.__connected_to_serial = not self.__connected_to_serial
         self.__update_actions()
 

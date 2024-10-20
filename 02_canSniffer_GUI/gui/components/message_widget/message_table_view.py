@@ -1,4 +1,4 @@
-from PyQt5.QtCore import QSize, Qt, pyqtSignal
+from PyQt5.QtCore import QSize, Qt, pyqtSignal, QItemSelectionModel, QItemSelection
 from PyQt5.QtWidgets import QTableView, QSizePolicy, QAbstractScrollArea, QAbstractItemView, QMenu
 
 from gui.components.live_mode_widget.can_message import CanMessage, DataChanged
@@ -131,3 +131,10 @@ class MessageTableView(QTableView):
                 self.set_hide_ids.emit(selected_ids)
 
             selection.clearSelection()
+
+    def get_last_selected_row_message(self):
+        selection_model: QItemSelectionModel = self.selectionModel()
+        selected_rows: QItemSelection = selection_model.selectedRows()
+        if selected_rows:
+            last_row = selected_rows[-1]
+            return self.messages_model.data(last_row, Qt.UserRole)

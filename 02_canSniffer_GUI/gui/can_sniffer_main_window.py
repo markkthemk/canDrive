@@ -1,5 +1,6 @@
 import os
 from functools import partial
+from pathlib import Path
 
 from PyQt5.QtWidgets import QMainWindow, QWidget, QAction, QFileDialog
 
@@ -104,14 +105,18 @@ class CanSnifferMainWindow(QMainWindow):
 
     # noinspection PyAttributeOutsideInit
     def on_new_project(self):
-        doc = os.path.join(os.environ["USERPROFILE"], "Documents")
         d = QFileDialog.getExistingDirectory(
-            self, "New project save location", f"{doc}", QFileDialog.ShowDirsOnly
+            self, "New project save location", f"{self.user_prefs.default_project_location}", QFileDialog.ShowDirsOnly
         )
-        self.user_prefs.add_recent_project(d)
-        self.open_project(d)
 
-    def open_project(self, project_path):
+        if not d:
+            return
+
+        project_path = Path(d)
+        self.user_prefs.add_recent_project(project_path)
+        self.open_project(project_path)
+
+    def open_project(self, project_path: Path):
         self.main_widget = CanSnifferMainWidget(project_path)
         self.setCentralWidget(self.main_widget)
 

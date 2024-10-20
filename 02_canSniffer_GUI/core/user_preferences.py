@@ -39,10 +39,3 @@ class UserPreferences(BaseModel):
         if SAVE_LOCATION.exists():
             SAVE_LOCATION.unlink()
         UserPreferences().save()
-
-
-if __name__ == "__main__":
-    # d = UserPreferences()
-    # d.save()
-    loaded = UserPreferences.reset_user_prefs()
-    print(loaded)
