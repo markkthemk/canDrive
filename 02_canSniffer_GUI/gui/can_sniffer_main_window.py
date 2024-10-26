@@ -28,8 +28,8 @@ class CanSnifferMainWindow(QMainWindow):
     # region menu bar
     # noinspection PyAttributeOutsideInit
     def create_menu_bar(self):
-        self.create_menu_bar_actions()
-        self.create_tab_actions()
+        self.create_file_menu_actions()
+        self.create_view_menu_actions()
         self.menu_bar = self.menuBar()
         self.create_file_menu()
         self.create_view_menu()
@@ -54,7 +54,7 @@ class CanSnifferMainWindow(QMainWindow):
 
     # noinspection PyAttributeOutsideInit
     # noinspection PyUnresolvedReferences
-    def create_menu_bar_actions(self):
+    def create_file_menu_actions(self):
         self.act_new = QAction("&New Project", self)
         self.act_new.setShortcut("Ctrl+N")
         self.act_new.setStatusTip("Create new project")
@@ -75,30 +75,26 @@ class CanSnifferMainWindow(QMainWindow):
 
     # noinspection PyAttributeOutsideInit
     # noinspection PyUnresolvedReferences
-    def create_tab_actions(self):
+    def create_view_menu_actions(self):
         self.act_1_live_mode_tab = QAction("&1 Live Mode", self)
         self.act_1_live_mode_tab.setShortcut("Ctrl+1")
         self.act_1_live_mode_tab.setStatusTip("Show Live Mode Tab")
         self.act_1_live_mode_tab.triggered.connect(lambda: self.main_widget.tab_widget.setCurrentIndex(0))
-        self.act_1_live_mode_tab.setEnabled(True)
 
         self.act_2_playback_mode_tab = QAction("&2 Playback Mode", self)
         self.act_2_playback_mode_tab.setShortcut("Ctrl+2")
         self.act_2_playback_mode_tab.setStatusTip("Show Playback Mode Tab")
         self.act_2_playback_mode_tab.triggered.connect(lambda: self.main_widget.tab_widget.setCurrentIndex(1))
-        self.act_2_playback_mode_tab.setEnabled(True)
 
         self.act_3_decoded_messages_tab = QAction("&3 Decoded Messages", self)
         self.act_3_decoded_messages_tab.setShortcut("Ctrl+3")
         self.act_3_decoded_messages_tab.setStatusTip("Show Decoded Messages Tab")
         self.act_3_decoded_messages_tab.triggered.connect(lambda: self.main_widget.tab_widget.setCurrentIndex(2))
-        self.act_3_decoded_messages_tab.setEnabled(True)
 
         self.act_4_label_dictionary_tab = QAction("&4 Label Dictionary", self)
         self.act_4_label_dictionary_tab.setShortcut("Ctrl+4")
         self.act_4_label_dictionary_tab.setStatusTip("Show Label Dictionary Tab")
         self.act_4_label_dictionary_tab.triggered.connect(lambda: self.main_widget.tab_widget.setCurrentIndex(3))
-        self.act_4_label_dictionary_tab.setEnabled(True)
 
     # noinspection PyAttributeOutsideInit
     def on_new_project(self):
@@ -120,12 +116,22 @@ class CanSnifferMainWindow(QMainWindow):
         self.act_new.setEnabled(False)
         self.act_close.setEnabled(True)
 
+        self.act_1_live_mode_tab.setEnabled(True)
+        self.act_2_playback_mode_tab.setEnabled(True)
+        self.act_3_decoded_messages_tab.setEnabled(True)
+        self.act_4_label_dictionary_tab.setEnabled(True)
+
     def on_project_close(self):
         self.main_widget = None
         self.setCentralWidget(QWidget())
 
         self.act_new.setEnabled(True)
         self.act_close.setEnabled(False)
+
+        self.act_1_live_mode_tab.setEnabled(False)
+        self.act_2_playback_mode_tab.setEnabled(False)
+        self.act_3_decoded_messages_tab.setEnabled(False)
+        self.act_4_label_dictionary_tab.setEnabled(False)
 
     # endregion
     # noinspection PyAttributeOutsideInit
