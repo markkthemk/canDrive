@@ -5,9 +5,7 @@ from PyQt5.QtWidgets import QMainWindow, QWidget, QAction, QFileDialog
 
 from core.user_preferences import UserPreferences
 from core.utils import read_file
-from gui.components.can_sniffer_main_widget.can_sniffer_main_widget import (
-    CanSnifferMainWidget,
-)
+from gui.can_sniffer_main_widget import CanSnifferMainWidget
 from gui.components.status_bar_widget import StatusBarWidget
 
 

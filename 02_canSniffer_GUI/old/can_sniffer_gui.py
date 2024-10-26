@@ -9,7 +9,7 @@ import serial.tools.list_ports
 
 from core import SerialReader, SerialWriter, HideOldPackets, FileLoader
 
-from gui import canSniffer_ui
+from old import canSniffer_ui
 from PyQt5.QtWidgets import (
     QMainWindow,
     QApplication,

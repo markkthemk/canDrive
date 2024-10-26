@@ -63,7 +63,7 @@ class CanSnifferMainWidget(QWidget):
     def __load_styles(self):
         self.setStyleSheet(
             read_file(
-                "gui/components/can_sniffer_main_widget/can_sniffer_main_widget.css"
+                "gui/can_sniffer_main_widget.css"
             )
         )
 

@@ -10,7 +10,7 @@ from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QVBoxLayout, QSizeGrip
 from PyQt5.QtCore import Qt
 
-from gui.can_sniffer_gui import CanSnifferGUI
+from old.can_sniffer_gui import CanSnifferGUI
 
 QApplication.setAttribute(Qt.AA_EnableHighDpiScaling, True)  # enable highdpi scaling
 QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps, True)  # use highdpi icons
