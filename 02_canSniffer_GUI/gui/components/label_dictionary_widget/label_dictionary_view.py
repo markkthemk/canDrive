@@ -1,7 +1,7 @@
 from PyQt5.QtCore import QSize
 from PyQt5.QtWidgets import QTableView, QAbstractScrollArea, QSizePolicy, QAbstractItemView
 
-from gui.components.label_dictionary_widget.label_dictionary_model import LabelDictionaryModel
+from core.label_dictionary_model.label_dictionary_model import LabelDictionaryModel
 
 
 class LabelDictionaryView(QTableView):
