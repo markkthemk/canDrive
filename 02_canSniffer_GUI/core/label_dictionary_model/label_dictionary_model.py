@@ -48,3 +48,15 @@ class LabelDictionaryModel(QAbstractTableModel):
         self.__data = sorted_dict
 
         self.endInsertRows()
+
+    def flags(self, index):
+        if index.column() == 1:
+            return Qt.ItemIsEnabled | Qt.ItemIsSelectable | Qt.ItemIsEditable
+        else:
+            return Qt.ItemIsEnabled
+
+    def setData(self, index, value, role):
+        if role == Qt.EditRole:
+            key = [d for d in self.__data.keys()][index.row()]
+            self.__data[key] = value
+            return True
