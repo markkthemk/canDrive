@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout
 
-from gui.components.decoded_messages_widget.decoded_messages_table_view import DecodedMessagesTableView
+from gui.decoded_messages_widget.decoded_messages_table_view import DecodedMessagesTableView
 
 
 class DecodedMessagesWidget(QWidget):

@@ -5,9 +5,9 @@ from PyQt5.QtWidgets import QWidget, QVBoxLayout, QTabWidget
 
 from core.can_message.decoded_can_message import DecodedCanMessage
 from core.utils import read_file
-from gui.components.decoded_messages_widget.decoded_messages_widget import DecodedMessagesWidget
-from gui.components.label_dictionary_widget.label_dictionary_widget import LabelDictionaryWidget
-from gui.components.live_mode_widget.live_mode_widget import LiveModeWidget
+from gui.decoded_messages_widget.decoded_messages_widget import DecodedMessagesWidget
+from gui.label_dictionary_widget.label_dictionary_widget import LabelDictionaryWidget
+from gui.live_mode_widget.live_mode_widget import LiveModeWidget
 
 
 class CanSnifferMainWidget(QWidget):
@@ -61,7 +61,7 @@ class CanSnifferMainWidget(QWidget):
                     container.append(row_data)
 
     def __load_styles(self):
-        self.setStyleSheet(read_file("gui/can_sniffer_main_widget.css"))
+        self.setStyleSheet(read_file("gui/main_widget/can_sniffer_main_widget.css"))
 
     def on_clicked_add_id_label(self):
         text = self.live_mode_widget.message_widget.message_filter_widget.line_id.text()

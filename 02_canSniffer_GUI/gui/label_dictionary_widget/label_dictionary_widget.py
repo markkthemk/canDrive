@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout
 
-from gui.components.label_dictionary_widget.label_dictionary_view import LabelDictionaryView
+from gui.label_dictionary_widget.label_dictionary_view import LabelDictionaryView
 
 
 class LabelDictionaryWidget(QWidget):

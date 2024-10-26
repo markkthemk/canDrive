@@ -1,4 +1,4 @@
-from typing import List, Any, Dict
+from typing import List
 
 from pydantic import BaseModel
 
@@ -66,9 +66,6 @@ class CanMessage(BaseModel):
         if with_terminator:
             csv_msg += ";"
         return csv_msg
-
-
-
 
 
 def main():
