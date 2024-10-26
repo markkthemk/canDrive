@@ -1,7 +1,7 @@
 from PyQt5.QtCore import QSize
 from PyQt5.QtWidgets import QTableView, QAbstractScrollArea, QSizePolicy, QAbstractItemView
 
-from gui.components.message_widget.messages_table_model import DecodedMessagesTableModel
+from core.message_table_model.decoded_message_table_model import DecodedMessagesTableModel
 
 
 class DecodedMessagesTableView(QTableView):

@@ -61,16 +61,14 @@ class CanSnifferMainWidget(QWidget):
                     container.append(row_data)
 
     def __load_styles(self):
-        self.setStyleSheet(
-            read_file(
-                "gui/can_sniffer_main_widget.css"
-            )
-        )
+        self.setStyleSheet(read_file("gui/can_sniffer_main_widget.css"))
 
     def on_clicked_add_id_label(self):
-        id_ = int(self.live_mode_widget.message_widget.message_filter_widget.line_id.text())
-        label = self.live_mode_widget.message_widget.message_filter_widget.line_label.text()
-        self.label_dictionary_widget.label_dictionary_view.label_dictionary_model.add_data(id_, label)
+        text = self.live_mode_widget.message_widget.message_filter_widget.line_id.text()
+        if text:
+            id_ = int(text)
+            label = self.live_mode_widget.message_widget.message_filter_widget.line_label.text()
+            self.label_dictionary_widget.label_dictionary_view.label_dictionary_model.add_data(id_, label)
 
     def on_clicked_add_decoded_message(self):
         message = self.live_mode_widget.message_widget.messages_view.get_last_selected_row_message()

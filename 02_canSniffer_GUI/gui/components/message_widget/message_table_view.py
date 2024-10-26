@@ -3,10 +3,8 @@ from PyQt5.QtWidgets import QTableView, QSizePolicy, QAbstractScrollArea, QAbstr
 
 from core.can_message.can_message import CanMessage
 from core.can_message.can_message_timestamp import CanMessageTimestamp
-from gui.components.message_widget.message_table_filter import (
-    MessageTableFilterProxyModel,
-)
-from gui.components.message_widget.messages_table_model import MessagesTableModel
+from core.message_table_model.messages_table_model import MessagesTableModel
+from core.message_table_model.message_table_filter import MessageTableFilterProxyModel
 
 
 class MessageTableView(QTableView):

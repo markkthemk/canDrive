@@ -1,8 +1,8 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QHBoxLayout
 
+from core.message_table_model.message_table_filter import COLUMN_ID
 from gui.components.message_widget.message_filter_widget import MessageFilterWidget
-from gui.components.message_widget.message_table_filter import COLUMN_ID
 from gui.components.message_widget.message_table_view import MessageTableView
 
 
