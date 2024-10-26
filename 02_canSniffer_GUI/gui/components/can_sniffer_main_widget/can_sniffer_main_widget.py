@@ -3,10 +3,10 @@ from pathlib import Path
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QTabWidget
 
+from core.can_message.decoded_can_message import DecodedCanMessage
 from core.utils import read_file
 from gui.components.decoded_messages_widget.decoded_messages_widget import DecodedMessagesWidget
 from gui.components.label_dictionary_widget.label_dictionary_widget import LabelDictionaryWidget
-from gui.components.live_mode_widget.can_message import DecodedCanMessage
 from gui.components.live_mode_widget.live_mode_widget import LiveModeWidget
 
 

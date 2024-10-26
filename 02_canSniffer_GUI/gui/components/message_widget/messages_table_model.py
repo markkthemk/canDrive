@@ -3,7 +3,9 @@ from typing import Any
 from PyQt5.QtCore import QAbstractTableModel, Qt, QModelIndex
 from PyQt5.QtGui import QColor
 
-from gui.components.live_mode_widget.can_message import CanMessage, CanMessageTimestamp, DecodedCanMessage
+from core.can_message.can_message import CanMessage
+from core.can_message.can_message_timestamp import CanMessageTimestamp
+from core.can_message.decoded_can_message import DecodedCanMessage
 
 
 class BaseMessageTableModel(QAbstractTableModel):

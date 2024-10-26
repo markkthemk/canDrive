@@ -1,7 +1,8 @@
 from PyQt5.QtCore import QSize, Qt, pyqtSignal, QItemSelectionModel, QItemSelection
 from PyQt5.QtWidgets import QTableView, QSizePolicy, QAbstractScrollArea, QAbstractItemView, QMenu
 
-from gui.components.live_mode_widget.can_message import CanMessage, CanMessageTimestamp
+from core.can_message.can_message import CanMessage
+from core.can_message.can_message_timestamp import CanMessageTimestamp
 from gui.components.message_widget.message_table_filter import (
     MessageTableFilterProxyModel,
 )
