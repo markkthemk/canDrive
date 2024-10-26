@@ -1,81 +1,61 @@
-import time
-from typing import List
+from typing import List, Any, Dict
 
 from pydantic import BaseModel
 
 
-class DataChanged(BaseModel):
-    value: int
-    changed: bool = False
-
-
 class CanMessage(BaseModel):
-    timestamp: float  # time the message was received
     identifier: int  # message identifier
     rtr: int  # remote transmission request
     ide: int  # identifier extension bit
     dlc: int  # data length code
-    data: List[DataChanged] = []  # max 8 bytes of value
-    new_identifier: bool = False
+    data: List[int] = []  # max 8 bytes of value
 
     def get_value_from_index(self, index):
         match index:
             case 0:
-                return self.timestamp
-            case 1:
                 return self.identifier
-            case 2:
+            case 1:
                 return self.rtr
-            case 3:
+            case 2:
                 return self.ide
-            case 4:
+            case 3:
                 return self.dlc
-            case 5:
+            case 4:
                 return self.data[0]
-            case 6:
+            case 5:
                 if len(self.data) >= 2:
                     return self.data[1]
-            case 7:
+            case 6:
                 if len(self.data) >= 3:
                     return self.data[2]
-            case 8:
+            case 7:
                 if len(self.data) >= 4:
                     return self.data[3]
-            case 9:
+            case 8:
                 if len(self.data) >= 5:
                     return self.data[4]
-            case 10:
+            case 9:
                 if len(self.data) >= 6:
                     return self.data[5]
-            case 11:
+            case 10:
                 if len(self.data) >= 7:
                     return self.data[6]
-            case 12:
+            case 11:
                 if len(self.data) >= 8:
                     return self.data[7]
             case _:
                 return None
-
-    def set_data_changed(self, other):
-        for index, d in enumerate(self.data):
-            if index <= len(other.data) and d.value != other.data[index].value:
-                d.changed = True
-
-    def set_all_data_to_changed(self):
-        for d in self.data:
-            d.changed = True
 
     @staticmethod
     def message_from_csv(csv_message):
         split = csv_message.split(",")
 
         message = CanMessage(
-            timestamp=time.time(),
             identifier=split[0],
             rtr=split[1],
             ide=split[2],
             dlc=split[3],
-            data=[DataChanged(value=int(item))for item in split[4:]],
+            data=[int(item) for item in split[4:]]
         )
         return message
 
@@ -88,12 +68,54 @@ class CanMessage(BaseModel):
         return csv_msg
 
 
-if __name__ == "__main__":
-    m = CanMessage(timestamp=1.01, identifier=1, rtr=2, ide=3, dlc=4)
-    print(m)
+class CanMessageTimestamp(BaseModel):
+    can_message: CanMessage
+    timestamp: float  # time the message was received
+    new_identifier: bool = False
+    indexes_changed: Dict[int, bool] = {}
 
-    m2 = CanMessage.message_from_csv("1,2,3,4,5,6,7,8")
-    print(m2)
+    def model_post_init(self, __context: Any) -> None:
+        for index, _ in enumerate(self.can_message.data):
+            self.indexes_changed[index] = False
 
-    csv = m2.message_to_csv(with_terminator=True)
-    print(csv)
+    def get_value_from_index(self, index):
+        if index == 0:
+            return self.timestamp
+        else:
+            return self.can_message.get_value_from_index(index - 1)
+
+    def set_data_changed(self, other):
+        for index, d in enumerate(self.can_message.data):
+            if index <= len(other.data) and d != other.data[index]:
+                self.indexes_changed[index] = True
+
+    def set_all_data_to_changed(self):
+        for i in self.indexes_changed:
+            self.indexes_changed[i] = True
+
+
+class DecodedCanMessage(BaseModel):
+    can_message: CanMessage
+    name: str
+
+    def get_value_from_index(self, index):
+        if index == 0:
+            return self.name
+        else:
+            return self.can_message.get_value_from_index(index - 1)
+
+
+def main():
+    c1 = CanMessage(identifier=1, rtr=2, ide=3, dlc=4, data=[5, 6, 7, 8, 9, 10, 11, 12])
+    c2 = CanMessage(identifier=1, rtr=2, ide=3, dlc=4, data=[5, 6, 7, 8, 9, 10, 11, 12])
+
+    print(c1 == c2)
+    print(c1 is c2)
+    lst = [c2]
+
+    print(c1 in lst)
+    print(c2 in lst)
+
+
+if __name__ == '__main__':
+    main()

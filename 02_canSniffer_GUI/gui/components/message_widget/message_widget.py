@@ -45,8 +45,6 @@ class MessageWidget(QWidget):
         self.messages_view.set_hide_ids.connect(self.on_set_hide_ids)
 
         self.messages_view.clicked.connect(self.on_clicked_message)
-        self.message_filter_widget.btn_add_id_label.clicked.connect(self.on_clicked_add_id_label)
-        self.message_filter_widget.btn_add_message.clicked.connect(self.on_clicked_add_message)
 
     def clear_table(self, *args):
         print("clear_table", args)
@@ -65,10 +63,3 @@ class MessageWidget(QWidget):
         index = self.messages_view.filter_proxy.index(value.row(), COLUMN_ID)
         data = self.messages_view.filter_proxy.data(index, Qt.DisplayRole)
         self.message_filter_widget.line_id.setText(str(data))
-
-    def on_clicked_add_id_label(self):
-        print("on_clicked_add_id_label")
-
-    def on_clicked_add_message(self):
-        message = self.messages_view.get_last_selected_row_message()
-        print("on_clicked_add_message", message)

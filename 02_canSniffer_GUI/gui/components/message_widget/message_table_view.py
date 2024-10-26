@@ -1,7 +1,7 @@
 from PyQt5.QtCore import QSize, Qt, pyqtSignal, QItemSelectionModel, QItemSelection
 from PyQt5.QtWidgets import QTableView, QSizePolicy, QAbstractScrollArea, QAbstractItemView, QMenu
 
-from gui.components.live_mode_widget.can_message import CanMessage, DataChanged
+from gui.components.live_mode_widget.can_message import CanMessage, CanMessageTimestamp
 from gui.components.message_widget.message_table_filter import (
     MessageTableFilterProxyModel,
 )
@@ -18,71 +18,48 @@ class MessageTableView(QTableView):
         self.messages_model = MessagesTableModel()
 
         messages = [
-            CanMessage(
+            CanMessageTimestamp(
                 timestamp=4,
-                identifier=13,
-                rtr=0,
-                ide=0,
-                dlc=8,
-                data=[
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0x11),
-                ],
+                can_message=CanMessage(
+                    identifier=13,
+                    rtr=0,
+                    ide=0,
+                    dlc=8,
+                    data=[0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x11]
+                )
             ),
-            CanMessage(
+            CanMessageTimestamp(
                 timestamp=5,
-                identifier=11,
-                rtr=0,
-                ide=0,
-                dlc=5,
-                data=[
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                ],
+                can_message=CanMessage(
+                    identifier=11,
+                    rtr=0,
+                    ide=0,
+                    dlc=5,
+                    data=[0xFF, 0xFF, 0xFF, 0xFF, 0xFF]
+                )
             ),
-            CanMessage(
+
+            CanMessageTimestamp(
                 timestamp=6,
-                identifier=12,
-                rtr=0,
-                ide=0,
-                dlc=8,
-                data=[
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                ],
+                can_message=CanMessage(
+                    identifier=12,
+                    rtr=0,
+                    ide=0,
+                    dlc=8,
+                    data=[0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF]
+                )
             ),
-            CanMessage(
+            CanMessageTimestamp(
                 timestamp=7,
-                identifier=13,
-                rtr=0,
-                ide=0,
-                dlc=8,
-                data=[
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0x00),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0xFF),
-                    DataChanged(value=0x11),
-                ],
+                can_message=CanMessage(
+                    identifier=13,
+                    rtr=0,
+                    ide=0,
+                    dlc=8,
+                    data=[0xFE, 0xFF, 0xFF, 0xFF, 0x01, 0xFF, 0xFF, 0x12]
+                )
             ),
+
         ]
 
         for message in messages:
