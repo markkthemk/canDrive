@@ -5,10 +5,8 @@ from PyQt5.QtCore import QModelIndex, QAbstractTableModel, Qt
 
 class LabelDictionaryModel(QAbstractTableModel):
 
-    def __init__(self, data: dict = None, parent=None):
+    def __init__(self, data: dict, parent=None):
         super().__init__(parent=parent)
-        if data is None:
-            data = {}
         self.__data = data
         self.__horizontal_headers = [
             "ID (hex)",

@@ -1,9 +1,9 @@
-import csv
 from pathlib import Path
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QTabWidget
 
 from core.can_message.decoded_can_message import DecodedCanMessage
+from core.project_data import load_sniff
 from core.utils import read_file
 from gui.decoded_messages_widget.decoded_messages_widget import DecodedMessagesWidget
 from gui.label_dictionary_widget.label_dictionary_widget import LabelDictionaryWidget
@@ -17,18 +17,8 @@ class CanSnifferMainWidget(QWidget):
         self.setLayout(self.main_layout)
 
         self.__project_location = project_location
-        print(self.__project_location)
 
-        self.__id_labels = []
-        self.__decoded_messages = []
-
-        self.__id_labels_csv = Path(self.__project_location / "id_labels.csv")
-        self.__decoded_messages_csv = Path(
-            self.__project_location / "decoded_messages.csv"
-        )
-
-        self.load_csv(self.__id_labels_csv, self.__id_labels)
-        self.load_csv(self.__decoded_messages_csv, self.__decoded_messages)
+        self.project_data = load_sniff(self.__project_location)
 
         self.live_mode_widget = LiveModeWidget()
         self.live_mode_widget.message_widget.message_filter_widget.btn_add_id_label.clicked.connect(
@@ -38,8 +28,8 @@ class CanSnifferMainWidget(QWidget):
             self.on_clicked_add_decoded_message
         )
 
-        self.decoded_messages_widget = DecodedMessagesWidget()
-        self.label_dictionary_widget = LabelDictionaryWidget()
+        self.decoded_messages_widget = DecodedMessagesWidget(self.project_data.decoded_messages)
+        self.label_dictionary_widget = LabelDictionaryWidget(self.project_data.label_dict)
 
         self.tab_widget = QTabWidget()
         self.tab_widget.addTab(self.live_mode_widget, "&1 Live Mode")
@@ -52,13 +42,6 @@ class CanSnifferMainWidget(QWidget):
         self.main_layout.addWidget(self.tab_widget)
 
         self.__load_styles()
-
-    @staticmethod
-    def load_csv(path: Path, container: list):
-        if path.exists():
-            with open(str(path), "r") as stream:
-                for row_data in csv.reader(stream):
-                    container.append(row_data)
 
     def __load_styles(self):
         self.setStyleSheet(read_file("gui/main_widget/can_sniffer_main_widget.css"))

@@ -5,6 +5,7 @@ front left window stop,259,00,00,08,04,AE,02,08,00,00,00,00
 rear right door,230 (RearLeftDoor),00,00,05,00,10,10,00,00,,,
 exit test mode,255,00,00,08,02,AA,00,00,00,00,00,00
 fuel indicator min,255,00,00,08,07,AE,01,04,04,00,82,00
+fuel indicator max,255,00,00,08,07,AE,01,04,04,00,28,00
 windows locked,415 (RightWindow),00,00,05,80,00,00,00,00,,,
 windows not locked (idle),415 (RightWindow),00,00,05,00,00,00,00,00,,,
 right mirror left,405 (FrontLeftDoor),00,00,06,00,01,00,10,00,00,,
@@ -80,7 +81,6 @@ MSpeed NAVI btn,201,00,00,03,01,E0,0B,,,,,
 RPM,255,00,00,08,07,AE,01,02,02,00,17,70
 RPM,255,00,00,08,07,AE,01,01,01,00,00,F9
 coolant,255,00,00,08,07,AE,01,08,08,00,A7,00
-fuel indicator max,255,08,07,AE,01,04,04,00,28,00,,
 symbol test lock,255,00,00,08,07,AE,06,01,01,00,08,00
 front right window full down,258,00,00,08,04,AE,02,08,08,00,00,00
 front right window full up,258,00,00,08,04,AE,02,08,10,00,00,00

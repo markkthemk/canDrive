@@ -9,6 +9,7 @@ pyqt5 = "*"
 qtmodern = "*"
 pyyaml = "*"
 pydantic = "*"
+pydantic-yaml = "*"
 
 [dev-packages]
 

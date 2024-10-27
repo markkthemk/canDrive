@@ -5,22 +5,10 @@ from core.label_dictionary_model.label_dictionary_model import LabelDictionaryMo
 
 
 class LabelDictionaryView(QTableView):
-    def __init__(self, parent=None):
+    def __init__(self, label_dict: dict, parent=None):
         super().__init__(parent=parent)
 
-        self.label_dictionary_model = LabelDictionaryModel()
-
-        labels = [
-            [3, "hoi_3"],
-            [2, "hoi_2"],
-            [0, "hoi"],
-            [1, "hoi_1"],
-            [2, "hoi_22rwefsdf"],
-        ]
-
-        for label in labels:
-            self.label_dictionary_model.add_data(label[0], label[1])
-
+        self.label_dictionary_model = LabelDictionaryModel(label_dict)
         self.setModel(self.label_dictionary_model)
 
         self.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)

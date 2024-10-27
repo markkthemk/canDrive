@@ -5,10 +5,10 @@ from core.message_table_model.decoded_message_table_model import DecodedMessages
 
 
 class DecodedMessagesTableView(QTableView):
-    def __init__(self, parent=None):
+    def __init__(self, decoded_messages_list, parent=None):
         super().__init__(parent=parent)
 
-        self.decoded_messages_table_model = DecodedMessagesTableModel()
+        self.decoded_messages_table_model = DecodedMessagesTableModel(decoded_messages_list)
         self.setModel(self.decoded_messages_table_model)
 
         self.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)

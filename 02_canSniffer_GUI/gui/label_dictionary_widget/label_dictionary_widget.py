@@ -4,13 +4,13 @@ from gui.label_dictionary_widget.label_dictionary_view import LabelDictionaryVie
 
 
 class LabelDictionaryWidget(QWidget):
-    def __init__(self, parent=None):
+    def __init__(self, label_dict, parent=None):
         super().__init__(parent=parent)
 
         self.main_layout = QVBoxLayout()
         self.setLayout(self.main_layout)
 
-        self.label_dictionary_view = LabelDictionaryView()
+        self.label_dictionary_view = LabelDictionaryView(label_dict)
         self.main_layout.addWidget(self.label_dictionary_view)
 
     def add_id_label(self, key, value):
