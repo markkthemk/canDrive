@@ -2,12 +2,14 @@ from typing import Any
 
 from PyQt5.QtCore import QModelIndex, QAbstractTableModel, Qt
 
+from core.project_data import ProjectData
+
 
 class LabelDictionaryModel(QAbstractTableModel):
 
-    def __init__(self, data: dict, parent=None):
+    def __init__(self, project_data: ProjectData, parent=None):
         super().__init__(parent=parent)
-        self.__data = data
+        self.__data = project_data.label_dict
         self.__horizontal_headers = [
             "ID (hex)",
             "Label"
@@ -20,7 +22,7 @@ class LabelDictionaryModel(QAbstractTableModel):
         return len(self.__horizontal_headers)
 
     def data(self, index: QModelIndex, role: int = ...):
-        if role == Qt.DisplayRole:
+        if role in [Qt.DisplayRole, Qt.EditRole]:
             key = [d for d in self.__data.keys()][index.row()]
             if index.column() == 0:
                 return key
@@ -57,4 +59,5 @@ class LabelDictionaryModel(QAbstractTableModel):
         if role == Qt.EditRole:
             key = [d for d in self.__data.keys()][index.row()]
             self.__data[key] = value
+            self.dataChanged.emit(index, index)
             return True

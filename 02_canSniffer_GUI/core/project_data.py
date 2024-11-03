@@ -2,8 +2,7 @@ import csv
 from pathlib import Path
 from typing import Dict, List
 
-from pydantic import BaseModel
-from pydantic_yaml import to_yaml_file, parse_yaml_raw_as
+from pydantic import BaseModel, ValidationError
 
 from core.can_message.can_message import CanMessage
 from core.can_message.decoded_can_message import DecodedCanMessage
@@ -15,13 +14,17 @@ class ProjectData(BaseModel):
 
 
 def load_sniff(path: Path):
-    with open(path, "r") as f:
-        project_data = ProjectData.model_validate(parse_yaml_raw_as(ProjectData, f.read()))
+    try:
+        with open(path, "r") as f:
+            project_data = ProjectData.model_validate_json(f.read())
+    except ValidationError:
+        return ProjectData()
     return project_data
 
 
 def save_sniff(path: Path, data: ProjectData):
-    to_yaml_file(path, data)
+    with open(path, "w") as f:
+        f.write(data.model_dump_json(indent=2))
 
 
 def load_csv(path: Path):

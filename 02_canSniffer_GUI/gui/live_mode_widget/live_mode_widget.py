@@ -8,12 +8,13 @@ from PyQt5.QtWidgets import (
 
 )
 
+from core.project_data import ProjectData
 from gui.components.com_port.com_port_combo_box import ComPortComboBox
 from gui.components.message_widget.message_widget import MessageWidget
 
 
 class LiveModeWidget(QWidget):
-    def __init__(self, parent=None):
+    def __init__(self, project_data: ProjectData = ProjectData(), parent=None):
         super().__init__(parent=parent)
 
         self.main_layout = QVBoxLayout()
@@ -24,7 +25,7 @@ class LiveModeWidget(QWidget):
 
         self.create_actions()
 
-        self.message_widget = MessageWidget(self)
+        self.message_widget = MessageWidget(project_data)
         self.main_layout.addWidget(self.message_widget)
 
     # noinspection PyAttributeOutsideInit

@@ -1,14 +1,16 @@
 from PyQt5.QtCore import QSize
-from PyQt5.QtWidgets import QTableView, QAbstractScrollArea, QSizePolicy, QAbstractItemView
+from PyQt5.QtWidgets import QTableView, QAbstractScrollArea, QSizePolicy, QAbstractItemView, QHeaderView
 
 from core.label_dictionary_model.label_dictionary_model import LabelDictionaryModel
+from core.project_data import ProjectData
 
 
 class LabelDictionaryView(QTableView):
-    def __init__(self, label_dict: dict, parent=None):
+    def __init__(self, project_data: ProjectData, parent=None):
         super().__init__(parent=parent)
 
-        self.label_dictionary_model = LabelDictionaryModel(label_dict)
+        self.label_dictionary_model = LabelDictionaryModel(project_data)
+        self.label_dictionary_model.dataChanged.connect(self.resizeColumnsToContents)
         self.setModel(self.label_dictionary_model)
 
         self.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
@@ -22,3 +24,5 @@ class LabelDictionaryView(QTableView):
         self.setShowGrid(True)
         self.verticalHeader().setStretchLastSection(False)
         self.setSelectionBehavior(QAbstractItemView.SelectRows)
+
+        self.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)

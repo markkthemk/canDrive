@@ -2,6 +2,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QHBoxLayout
 
 from core.message_table_model.message_table_filter import COLUMN_ID
+from core.project_data import ProjectData
 from gui.components.message_widget.message_filter_widget import MessageFilterWidget
 from gui.components.message_widget.message_table_view import MessageTableView
 
@@ -9,13 +10,13 @@ from gui.components.message_widget.message_table_view import MessageTableView
 class MessageWidget(QWidget):
     """A Widget with a table view and a filter section for the table"""
 
-    def __init__(self, parent=None):
+    def __init__(self, project_data: ProjectData = ProjectData(), parent=None):
         super().__init__(parent=parent)
 
         self.main_layout = QHBoxLayout()
         self.setLayout(self.main_layout)
 
-        self.messages_view = MessageTableView()
+        self.messages_view = MessageTableView(project_data)
         self.main_layout.addWidget(self.messages_view)
 
         self.message_filter_widget = MessageFilterWidget(self)

@@ -3,11 +3,12 @@ from pathlib import Path
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QTabWidget
 
 from core.can_message.decoded_can_message import DecodedCanMessage
-from core.project_data import load_sniff
+from core.project_data import load_sniff, save_sniff
 from core.utils import read_file
 from gui.decoded_messages_widget.decoded_messages_widget import DecodedMessagesWidget
 from gui.label_dictionary_widget.label_dictionary_widget import LabelDictionaryWidget
 from gui.live_mode_widget.live_mode_widget import LiveModeWidget
+from gui.playback_mode_widget.playback_mode_widget import PlaybackModeWidget
 
 
 class CanSnifferMainWidget(QWidget):
@@ -17,10 +18,9 @@ class CanSnifferMainWidget(QWidget):
         self.setLayout(self.main_layout)
 
         self.__project_location = project_location
-
         self.project_data = load_sniff(self.__project_location)
 
-        self.live_mode_widget = LiveModeWidget()
+        self.live_mode_widget = LiveModeWidget(self.project_data)
         self.live_mode_widget.message_widget.message_filter_widget.btn_add_id_label.clicked.connect(
             self.on_clicked_add_id_label)
 
@@ -28,18 +28,25 @@ class CanSnifferMainWidget(QWidget):
             self.on_clicked_add_decoded_message
         )
 
-        self.decoded_messages_widget = DecodedMessagesWidget(self.project_data.decoded_messages)
-        self.label_dictionary_widget = LabelDictionaryWidget(self.project_data.label_dict)
+        self.playback_mode_widget = PlaybackModeWidget(self.project_data)
+
+        self.decoded_messages_widget = DecodedMessagesWidget(self.project_data)
+        self.label_dictionary_widget = LabelDictionaryWidget(self.project_data)
+        self.decoded_messages_widget.decoded_messages_table_view.decoded_messages_table_model.dataChanged.connect(
+            self.save_project)
+        self.label_dictionary_widget.label_dictionary_view.label_dictionary_model.dataChanged.connect(self.save_project)
 
         self.tab_widget = QTabWidget()
         self.tab_widget.addTab(self.live_mode_widget, "&1 Live Mode")
-        self.tab_widget.addTab(QWidget(), "&2 Playback Mode")
+        self.tab_widget.addTab(self.playback_mode_widget, "&2 Playback Mode")
         self.tab_widget.addTab(self.decoded_messages_widget, "&3 Decoded Messages")
         self.tab_widget.addTab(self.label_dictionary_widget, "&4 Label Dictionary")
         self.tab_widget.tabBar().setExpanding(True)
         self.tab_widget.tabBar().setDocumentMode(True)
 
         self.main_layout.addWidget(self.tab_widget)
+
+        self.tab_widget.setCurrentIndex(3)
 
         self.__load_styles()
 
@@ -60,3 +67,6 @@ class CanSnifferMainWidget(QWidget):
             decoded_message = DecodedCanMessage(can_message=message.can_message, name="new")
             self.decoded_messages_widget.decoded_messages_table_view.decoded_messages_table_model.add_data(
                 decoded_message)
+
+    def save_project(self):
+        save_sniff(self.__project_location, self.project_data)

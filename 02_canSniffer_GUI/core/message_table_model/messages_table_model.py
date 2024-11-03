@@ -4,10 +4,11 @@ from PyQt5.QtGui import QColor
 from core.can_message.can_message import CanMessage
 from core.can_message.can_message_timestamp import CanMessageTimestamp
 from core.message_table_model.base_message_table_model import BaseMessageTableModel
+from core.project_data import ProjectData
 
 
 class MessagesTableModel(BaseMessageTableModel):
-    def __init__(self, data: list = None, parent=None):
+    def __init__(self, data: list = None, project_data: ProjectData = ProjectData(), parent=None):
         headers = [
             "Timestamp (s)",
             "ID (hex)",
@@ -28,6 +29,7 @@ class MessagesTableModel(BaseMessageTableModel):
         self.__latest_data = {}
         self.highlight_new_packets = False
         self.highlight_new_values = False
+        self.project_data = project_data
 
     def set_highlight_new_packets(self, value):
         self.highlight_new_packets = value
@@ -48,6 +50,9 @@ class MessagesTableModel(BaseMessageTableModel):
         if role == Qt.DisplayRole:
             message: CanMessageTimestamp = self._data[index.row()]
             value = message.get_value_from_index(index.column())
+            if index.column() == 1:
+                if value in self.project_data.label_dict:
+                    return f"{value} ({self.project_data.label_dict[value]})"
             return value
 
         if role == Qt.TextAlignmentRole:

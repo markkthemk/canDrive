@@ -5,22 +5,23 @@ from core.can_message.can_message import CanMessage
 from core.can_message.can_message_timestamp import CanMessageTimestamp
 from core.message_table_model.messages_table_model import MessagesTableModel
 from core.message_table_model.message_table_filter import MessageTableFilterProxyModel
+from core.project_data import ProjectData
 
 
 class MessageTableView(QTableView):
     set_show_ids = pyqtSignal(list)
     set_hide_ids = pyqtSignal(list)
 
-    def __init__(self, parent=None):
+    def __init__(self, project_data: ProjectData = ProjectData(), parent=None):
         super().__init__(parent=parent)
 
-        self.messages_model = MessagesTableModel()
+        self.messages_model = MessagesTableModel([], project_data)
 
         messages = [
             CanMessageTimestamp(
                 timestamp=4,
                 can_message=CanMessage(
-                    identifier=13,
+                    identifier=513,
                     rtr=0,
                     ide=0,
                     dlc=8,
@@ -51,7 +52,7 @@ class MessageTableView(QTableView):
             CanMessageTimestamp(
                 timestamp=7,
                 can_message=CanMessage(
-                    identifier=13,
+                    identifier=513,
                     rtr=0,
                     ide=0,
                     dlc=8,

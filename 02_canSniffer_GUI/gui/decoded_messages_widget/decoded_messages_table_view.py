@@ -1,14 +1,15 @@
 from PyQt5.QtCore import QSize
-from PyQt5.QtWidgets import QTableView, QAbstractScrollArea, QSizePolicy, QAbstractItemView
+from PyQt5.QtWidgets import QTableView, QAbstractScrollArea, QSizePolicy, QAbstractItemView, QHeaderView
 
 from core.message_table_model.decoded_message_table_model import DecodedMessagesTableModel
+from core.project_data import ProjectData
 
 
 class DecodedMessagesTableView(QTableView):
-    def __init__(self, decoded_messages_list, parent=None):
+    def __init__(self, project_data: ProjectData, parent=None):
         super().__init__(parent=parent)
 
-        self.decoded_messages_table_model = DecodedMessagesTableModel(decoded_messages_list)
+        self.decoded_messages_table_model = DecodedMessagesTableModel(project_data)
         self.setModel(self.decoded_messages_table_model)
 
         self.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
@@ -22,6 +23,8 @@ class DecodedMessagesTableView(QTableView):
         self.setShowGrid(True)
         self.verticalHeader().setStretchLastSection(False)
         self.setSelectionBehavior(QAbstractItemView.SelectRows)
+
+        self.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
 
         for i in range(5, self.model().columnCount()):
             self.setColumnWidth(i, 32)

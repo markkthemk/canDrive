@@ -10,6 +10,9 @@ qtmodern = "*"
 pyyaml = "*"
 pydantic = "*"
 pydantic-yaml = "*"
+pytest = "*"
+pytest-qt = "*"
+pytest-coverage = "*"
 
 [dev-packages]
 
